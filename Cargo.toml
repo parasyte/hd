@@ -1,0 +1,31 @@
+[package]
+name = "hd"
+description = "Hex Display: A modern `xxd` alternative."
+version = "0.1.0"
+authors = ["Jay Oster <jay@kodewerx.org>"]
+repository = "https://github.com/parasyte/hd"
+edition = "2021"
+rust-version = "1.73.0"
+keywords = ["bytes", "hex", "pretty", "viewer", "xxd"]
+categories = ["command-line-utilities", "development-tools", "value-formatting"]
+license = "MIT"
+include = [
+    "/Cargo.*",
+    "/LICENSE",
+    "/README.md",
+    "/img/screenshot.png",
+    "/src/**/*",
+]
+
+[dependencies]
+colorz = { version = "1.1.4", features = ["std"] }
+error-iter = "0.4.1"
+onlyargs = "0.2.0"
+onlyargs_derive = "0.2.0"
+onlyerror = "0.1.5"
+unicode-display-width = "0.3.0"
+unicode-segmentation = "1.12.0"
+
+[profile.release]
+codegen-units = 1
+lto = "fat"
